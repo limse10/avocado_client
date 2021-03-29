@@ -1,18 +1,80 @@
-.App {
-  text-align: center;
+body {
+  background-color: rgb(217, 231, 136);
 }
 
-.App-header {
-  background-color: #282c34;
+.App {
+  text-align: center;
+  background-color: rgb(217, 231, 136);
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.Header {
+  background-color: #599e56;
   min-height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  color: rgb(255, 255, 255);
+}
+
+.Header .link {
+  flex: wrap;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.Header .link:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.Header .link.active {
+  background-color: #4caf50;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.ToolExplorePage {
+  margin: 0 5em 0 5em;
+}
+.ToolsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 12px;
+}
+.ToolCard {
+  background-color: rgb(206, 158, 99);
+  min-width: 100%;
+  padding-top: 50%;
+  margin: 1em;
+  border-radius: 10%;
+}
+.ToolCard:hover {
+  opacity: 0.7;
+}
+
+.iframe-container {
+  /* overflow: hidden; */
+  /* 16:9 aspect ratio */
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  /* padding-top: 56.25%; */
+  position: relative;
+  height: 80vh;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  max-width: 140vh;
+  height: 100%;
 }
