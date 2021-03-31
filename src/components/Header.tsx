@@ -21,9 +21,8 @@ export const Header: React.FC<Props> = ({ page }) => {
         alt="logo"
         height="100vh"
       />
+
       <h1>{page}</h1>
     </div>
   );
 };
-
-// export default Header;

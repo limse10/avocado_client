@@ -5,7 +5,16 @@ import { Home } from "./components/Home";
 import { About } from "./components/About";
 import { Login } from "./components/Login";
 import { ToolPage } from "./components/ToolPage";
+export const API_URL = process.env.REACT_APP_API_URL;
 
+export interface Tool {
+  id: number;
+  name: string;
+  description: string;
+  url: string;
+  author: string;
+  category: string;
+}
 function App() {
   return (
     <Router>

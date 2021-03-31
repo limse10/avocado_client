@@ -1,21 +1,22 @@
 import * as React from "react";
 import { useHistory } from "react-router-dom";
+import { Tool } from "../App";
 
 interface Props {
-  id: string;
-  name: string;
+  tool: Tool;
 }
 
-export const ToolCard: React.FC<Props> = ({ id, name }) => {
+export const ToolCard: React.FC<Props> = ({ tool }) => {
   const history = useHistory();
   const redirectToTarget = () => {
-    history.push(`/t/${id}`);
+    history.push(`/t/${tool.id}`);
     return;
   };
   return (
     <div onClick={redirectToTarget} className="ToolCard">
-      <p>{id}</p>
-      <p>{name}</p>
+      <p>{tool.name}</p>
+      <p>by {tool.author}</p>
+      <p>{tool.description}</p>
     </div>
   );
 };
