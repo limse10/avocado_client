@@ -12,7 +12,7 @@ export const ToolPage: React.FC<Props> = () => {
   return (
     <div className="ToolPage">
       <Header page="Avocado" />
-      <div>
+      <div className="tool-header">
         {data?.name} by {data.author}
       </div>
       <div className="iframe-container">

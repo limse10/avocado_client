@@ -62,6 +62,13 @@ body {
   opacity: 0.7;
 }
 
+.tool-header {
+  text-align: center;
+  /* align-items: center; */
+  height: 50px;
+  font-size: 30px;
+}
+
 .iframe-container {
   /* overflow: hidden; */
   /* 16:9 aspect ratio */
