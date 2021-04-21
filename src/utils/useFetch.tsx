@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 
-export const useFetch: any = (url: string) => {
+export const useFetch: any = (url: string, post_data = {}) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(url);
+      const response = await fetch(url, post_data);
       const data = await response.json();
       setData(data);
-      setLoading(false);
     };
     fetchData();
+    setLoading(false);
   }, []);
   return { data, loading };
 };
