@@ -4,6 +4,7 @@ import { ToolCard } from "./ToolCard";
 import { useFetch } from "../utils/useFetch";
 import { Tool, API_URL } from "../App";
 import { useState } from "react";
+import { getUser } from "../providers/UserProvider";
 
 interface Props {}
 
@@ -18,11 +19,13 @@ interface Props {}
 //   { id: "8", name: "shaoboi8" },
 // ];
 
-export const ToolExplorePage: React.FC<Props> = () => {
-  const [tools, setTools] = useState([]);
-  const { data, loading } = useFetch(API_URL + "/ls");
+export const ToolStarredPage: React.FC<Props> = () => {
+  const { data, loading } = useFetch(
+    API_URL + `/u/starred?uid=${getUser().uid}`
+  );
   return (
     <div className="ToolExplorePage">
+      <h1>Your Starred Tools</h1>
       <div className="ToolsGrid">
         {data.tools?.map((t: Tool) => (
           <ToolCard tool={t} />

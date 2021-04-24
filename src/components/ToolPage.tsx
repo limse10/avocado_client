@@ -1,5 +1,4 @@
 import * as React from "react";
-import ReactDOM from "react-dom";
 import { Header } from "./Header";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../utils/useFetch";
@@ -9,6 +8,7 @@ interface Props {}
 export const ToolPage: React.FC<Props> = () => {
   const { id } = useParams<{ id: string }>();
   const { data, loading } = useFetch(API_URL + `/tool?id=${id}`);
+  console.log(data);
   return (
     <div className="ToolPage">
       <Header page="Avocado" />

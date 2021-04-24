@@ -1,5 +1,4 @@
 import React, { useState, useEffect, createContext } from "react";
-import { isPropertySignature } from "typescript";
 import { auth } from "../services/firebase";
 import { logOut } from "../services/firebase";
 

@@ -1,11 +1,8 @@
 import * as React from "react";
-import { Header } from "./Header";
-import { Form, Formik } from "formik";
+import { Formik } from "formik";
 
-import { signInWithGoogle } from "../services/firebase";
-import { useEffect, useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { UserContext, getAuthToken } from "../providers/UserProvider";
-import { useFetch } from "../utils/useFetch";
 import { API_URL } from "../App";
 import { useHistory } from "react-router-dom";
 
@@ -75,7 +72,7 @@ export const Register: React.FC<Props> = () => {
           </form>
         )}
       </Formik>{" "}
-      {status.warning != "" ? <h1>{status.warning}</h1> : null}
+      {status.warning !== "" ? <h1>{status.warning}</h1> : null}
     </div>
   );
 };

@@ -1,13 +1,9 @@
 import * as React from "react";
 import logo from "../img/avocado.svg";
 import { useHistory } from "react-router-dom";
-import { signInWithGoogle } from "../services/firebase";
-import { logOut } from "../services/firebase";
 
-import { useEffect, useContext, useState } from "react";
+import { useContext } from "react";
 import { UserContext, getUser, resetUser } from "../providers/UserProvider";
-import { useFetch } from "../utils/useFetch";
-import { API_URL } from "../App";
 
 interface Props {
   page: string;

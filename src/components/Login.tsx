@@ -1,8 +1,7 @@
 import * as React from "react";
 import { signInWithGoogle } from "../services/firebase";
-import { useEffect, useContext, useState } from "react";
-import { UserContext, getUser, setUser, User } from "../providers/UserProvider";
-import { useFetch } from "../utils/useFetch";
+import { useContext } from "react";
+import { UserContext, setUser } from "../providers/UserProvider";
 import { useHistory } from "react-router-dom";
 
 import { API_URL } from "../App";
@@ -11,19 +10,12 @@ interface Props {}
 
 export const Login: React.FC<Props> = () => {
   const context = useContext(UserContext);
-  const [user, setData] = useState({} as User);
-
-  // useEffect(() => {
-  // }, []);
 
   const loadUser = async () => {
     if (context.gUser) {
       const res = await fetch(API_URL + `/user?uid=${context.gUser?.id}`);
       const data = await res.json();
-      // console.log(data);
       if (data.uid) {
-        setData(data);
-        // console.log(data);
         return data;
       }
     }
